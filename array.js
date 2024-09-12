@@ -10,6 +10,5 @@ Array.prototype.myMap = function(callback) {
   
   let arr = [1, 2, 3];
   arr = arr.myMap(e => e * 2);
-  console.log(arr); // [2, 4, 6]
-
+  console.log(arr);  
 
