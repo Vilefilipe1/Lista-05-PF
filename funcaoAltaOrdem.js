@@ -8,3 +8,4 @@ const Soma_lista = (lista.map((x) => x = (lista.reduce((acc,x) => acc + x))))
 const som_lista = (lista) => lista.map((x) => x = (lista.reduce((acc,x) => acc + x)))
 
 console.log(som_lista(lista)) // [450, 450, 450, 450, 450]
+
