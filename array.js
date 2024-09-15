@@ -12,3 +12,5 @@ Array.prototype.myMap = function(callback) {
   arr = arr.myMap(e => e * 2);
   console.log(arr);  
 
+  const sum = (list) => list.reduce((acc,x)=>acc+x,0)
+  console.log(sum(arr))
