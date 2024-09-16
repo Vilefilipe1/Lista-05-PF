@@ -1,4 +1,3 @@
-const aluno = {nome: '' , matricula: "" , idade: '' , curso: '' }
 
 const criar_turma = (tamanho) => {
     const aluno = [{nome: '' , matricula: "" , idade: '' , curso: '' }]
@@ -13,11 +12,11 @@ turma = criar_turma(10)
 listar(turma)
 console.log(turma[0])
 
-const add_aluno = (a,m,i,c) => {
+const criar_aluno = (a,m,i,c) => ({nome: a , matricula: m , idade: i , curso: c })
 
-    const aluno = {nome: a , matricula: m , idade: i , curso: c }
-    return aluno
+    
+    
 
-}
-console.log(add_aluno('luiz',02,18,'cc'))
-console.log(add_aluno('filipe',03,18,'cc'))
+
+console.log(criar_aluno('luiz',2,18,'cc'))
+console.log(criar_aluno('filipe',3,18,'cc'))
