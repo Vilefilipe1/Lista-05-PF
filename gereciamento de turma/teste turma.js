@@ -1,22 +1,18 @@
 
-const criar_turma = (tamanho) => {
-    const aluno = [{nome: '' , matricula: "" , idade: '' , curso: '' }]
-    
-    
+const add_aluno = (turma) => (a,m,i,c) => turma.concat(({nome: a , matricula: m , idade: i , curso: c }))
 
-    return aluno.map((x) => Array(tamanho).fill(x))
-}
 const listar = (lista) => lista.map((x,acc)=> console.log(`${acc+1}° aluno:`, x))
-turma = criar_turma(10)
 
-listar(turma)
-console.log(turma[0])
+const remo_aluno = (matricula, turma) => turma.filter((x) => x.matricula != matricula)
 
-const criar_aluno = (a,m,i,c) => ({nome: a , matricula: m , idade: i , curso: c })
-
-    
-    
+const ordenar = (turma) => turma.toSorted((a, b) => a.matricula - b.matricula)
 
 
-console.log(criar_aluno('luiz',2,18,'cc'))
-console.log(criar_aluno('filipe',3,18,'cc'))
+
+const turma = []
+
+const turma_v2 = add_aluno(turma)("luiz", 2023002, 18, "cc")
+const turma_v3 = add_aluno(turma_v2)("luiz", 2022002, 18, "cc")
+const turma_v4 = add_aluno(turma_v3)("luiz", 2024002, 18, "cc")
+const turma_v5 = add_aluno(turma_v4)("luiz", 2024001, 18, "cc")
+listar(ordenar(turma_v5))
