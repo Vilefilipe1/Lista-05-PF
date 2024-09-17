@@ -3,6 +3,8 @@ const add_aluno = (turma) => (a,m,i,c) => turma.concat(({nome: a , matricula: m 
 
 const listar = (lista) => lista.map((x,acc)=> console.log(`${acc+1}° aluno:`, x))
 
+const buscar_curso = (curso,turma) => turma.filter((x) => x.curso == curso)
+
 const remo_aluno = (matricula, turma) => turma.filter((x) => x.matricula != matricula)
 
 const ordenar = (turma) => turma.toSorted((a, b) => a.matricula - b.matricula)
@@ -26,4 +28,4 @@ listar(ordenar(turma_v5))
 
 const turma_v6 = edit_aluno(2023002,turma_v5)('Louis',2021001,21,'ec')
 
-listar(ordenar(turma_v6))
+listar(ordenar(turma_v6))3
