@@ -22,11 +22,13 @@ const removerAluno = (n) => [...turma].filter((x) => x.nome != n)
 const ordenarAluno = () => [...turma].sort((x,y) => x.matricula - y.matricula)
 
 const contagemCurso = (curso) => (buscar_curso(curso)).reduce((acc) => acc + 1, 0) // Ainda falta
+// const contagemCurso = (curso) => (buscar_curso(curso)).length
 
-const edicaoAluno = (nome, idade, matricula, curso) => { // Ainda falta
-    removerAluno(nome)
-    const turma5 = adicionarAluno(nome, idade, matricula, curso)
-    return turma5
+const edicaoAluno = (nome) => (novo_nome, novo_idade, novo_matricula, novo_curso) => {
+    return [...([...turma].filter((x) => x.nome != nome)), aluno(novo_nome, novo_idade, novo_matricula, novo_curso)] 
 }
 
-console.log(edicaoAluno("Filipe", 25, 23, "medicina")[0])
+// console.log(turma[0])
+// console.log(edicaoAluno("Filipe")("Henrique", 124, "14232", "Medicina")[2])
+
+console.log(contagemCurso("cc"))
