@@ -30,7 +30,7 @@ listar(turma1)
 console.log(ver_sem(turma1,2024002), ver_sem(turma1,""))
 console.log(turma1[0])
 add_aluno("luiz", 2024002, 18, "cc", turma1)
-console.log(ver_sem(turma1,2024002), ver_sem(turma1,""))
+console.log(turma1)
 add_aluno("luasdaasdiz", 2024003, 18, "Ec", turma1)
 listar(turma1)
 

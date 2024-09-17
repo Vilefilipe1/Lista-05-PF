@@ -20,17 +20,17 @@ const remo_aluno = (matricula,turma) =>{
     turma.filter((x) => x.matricula != matricula)
 }
 add_aluno("luiz", 2024002, 18, "cc", turma1)
-add_aluno("luasdaasdiz", 2024002, 18, "Ec", turma1)
+add_aluno("luasdaasdiz", 2024005, 18, "Ec", turma1)
 add_aluno("sdiz", 2024003, 18, "cc", turma1)
-add_aluno("aasdiz", 2024002, 18, "Ec", turma1)
+add_aluno("aasdiz", 2024004, 18, "Ec", turma1)
 add_aluno("luasd", 2024001, 18, "cc", turma1)
 //console.log(turma1)
 //console.log(turma1[0])
 //console.log(turma1[1])
 
 //turma1.map((x,acc)=> console.log(`${acc+1}° aluno:`, x))
-console.log(listar(turma1))
-
+listar(turma1)
+buscar_curso('cc')
 
 /*  criar turma = (tamanho) => retorna um array de tamanho x com o valor 
 {nome: '' , matricula: "" , idade: '' , curso: '' } em cada index
