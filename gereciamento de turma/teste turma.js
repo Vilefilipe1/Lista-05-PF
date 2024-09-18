@@ -28,4 +28,4 @@ listar(ordenar(turma_v5))
 
 const turma_v6 = edit_aluno(2023002,turma_v5)('Louis',2021001,21,'ec')
 
-listar(ordenar(turma_v6))3
+listar(ordenar(turma_v6))
