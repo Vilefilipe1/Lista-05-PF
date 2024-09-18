@@ -29,6 +29,6 @@ const edicaoAluno = (nome) => (novo_nome, novo_idade, novo_matricula, novo_curso
 }
 
 // console.log(turma[0])
-// console.log(edicaoAluno("Filipe")("Henrique", 124, "14232", "Medicina")[2])
+listarAluno(removerAluno("Filipe"))
 
 console.log(contagemCurso("cc"))
