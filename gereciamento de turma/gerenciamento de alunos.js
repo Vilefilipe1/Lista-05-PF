@@ -29,7 +29,7 @@ const remo_aluno = (nome, turma) => turma.filter((x) => x.nome != nome)
 
 // Questão 7
 
-const ordenar = (turma) => turma.sort((a, b) => a.matricula - b.matricula)
+const ordenar = (turma) => [...turma].sort((a, b) => a.matricula - b.matricula)
 
 // Questão 8
 
@@ -63,5 +63,5 @@ const turmaV5 = add_aluno(turmaV4)("Carlos",20230001010,18,'si')
 listar(turmaV5)
 // listar(buscar_curso("ec", turmaV5))
 // listar(remo_aluno("Filipe", turmaV5))
-// listar(ordenar(turmaV5))
+listar(ordenar(turmaV5))
 // console.log(contagem_Curso(turmaV5))
