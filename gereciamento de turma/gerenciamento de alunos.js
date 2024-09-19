@@ -1,44 +1,51 @@
+// Gerenciamento de Alunos(as)
+// Filipe Ciríaco Marcelino do Nascimento
+// Otávio Augusto B. Santos Filho
+// Luiz Manoel Rosa Nunes Meneses
 
-const turma1 = []
+// Questão 1
+
+const criar_aluno = (n, m, i, c) => ({nome: n, matricula: m, idade: i, curso: c})
+
+// Questão 2
+
+const turma = []
+
+// Questão 3
+
+const add_aluno = (turma) => (nome,matricula,idade,curso) => turma.concat(criar_aluno(nome, matricula, idade, curso))
+
+// Questão 4
 
 const listar = (lista) => lista.map((x,acc)=> console.log(`${acc+1}° aluno:`, x))
-const buscar_curso = (curso) => listar(turma1.filter((x) => x.curso == curso))
-const ver_sem = (turma,matricula) => turma.some((x) => x.matricula == matricula)
-const add_aluno = (a_nome, a_matricula, a_idade, a_curso, turma) => {
-    if (ver_sem(turma,a_matricula) === false ){
-        const aluno = [{nome: '' , matricula: "" , idade: '' , curso: '' }]
-        aluno.map((x) => {
-            x.nome = a_nome
-            x.matricula = a_matricula
-            x.idade = a_idade
-            x.curso = a_curso
-        })
-        turma.push(aluno[0])  
-    }   
+
+// Questão 5
+
+const buscar_curso = (curso,turma) => turma.filter((x) => x.curso == curso)
+
+// Questão 6
+
+const remo_aluno = (nome, t) => t.filter((x) => x.nome != nome)
+
+// Questão 7
+
+const ordenar = (turma) => turma.sort((a, b) => a.matricula - b.matricula)
+
+// Questão 8
+
+const contagem_Curso = (turma) => {
+    const contagemCurso = (curso,turma) => (buscar_curso(curso,turma)).reduce((acc) => acc + 1, 0)
+    const conCC = contagemCurso("cc", turma)
+    const conSI = contagemCurso("si", turma)
+    const conEC = contagemCurso("ec", turma)
+    return `CC: ${conCC}, SI: ${conSI}, EC: ${conEC}`
 }
-const remo_aluno = (matricula,turma) =>{
-    turma.filter((x) => x.matricula != matricula)
+
+// Questão 9
+
+const edit_aluno = (nome, turma) => (new_nome,new_matricula,new_idade,new_curso) =>{
+
+    const r = remo_aluno(nome,turma)
+    return add_aluno(r)(new_nome,new_matricula,new_idade,new_curso)
+
 }
-add_aluno("luiz", 2024002, 18, "cc", turma1)
-add_aluno("luasdaasdiz", 2024005, 18, "Ec", turma1)
-add_aluno("sdiz", 2024003, 18, "cc", turma1)
-add_aluno("aasdiz", 2024004, 18, "Ec", turma1)
-add_aluno("luasd", 2024001, 18, "cc", turma1)
-//console.log(turma1)
-//console.log(turma1[0])
-//console.log(turma1[1])
-
-//turma1.map((x,acc)=> console.log(`${acc+1}° aluno:`, x))
-listar(turma1)
-buscar_curso('cc')
-
-/*  criar turma = (tamanho) => retorna um array de tamanho x com o valor 
-{nome: '' , matricula: "" , idade: '' , curso: '' } em cada index
-
-add aluno = (a_nome, a_matricula, a_idade, a_curso, turma) => altera um 
-{nome: '' , matricula: "" , idade: '' , curso: '' } que esteja vazio caso não tenha sua matricula presente
-na turma
-
-remover aluno = (matricula) => altera o registro com a matricula designada para
-{nome: '' , matricula: "" , idade: '' , curso: '' }
-*/
