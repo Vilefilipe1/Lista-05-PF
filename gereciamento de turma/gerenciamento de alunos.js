@@ -29,7 +29,7 @@ const remo_aluno = (nome, turma) => turma.filter((x) => x.nome != nome)
 
 // Questão 7
 
-const ordenar = (turma) => [...turma].sort((a, b) => a.matricula - b.matricula)
+const ordenar = (turma) => turma.toSorted((a, b) => a.matricula - b.matricula)
 
 // Questão 8
 
